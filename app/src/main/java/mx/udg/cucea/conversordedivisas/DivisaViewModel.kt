@@ -16,4 +16,13 @@ class DivisaViewModel: ViewModel() {
         val response =  service.getDivisas(apiKey)
         return response
     }
+
+    suspend fun getConversion(
+        apiKey: String,
+        selectedOrigen: String,
+        selectedDestino: String,
+    ): ConversionData {
+        val response = service.getConversion(apiKey, selectedOrigen, selectedDestino)
+        return response;
+    }
 }
